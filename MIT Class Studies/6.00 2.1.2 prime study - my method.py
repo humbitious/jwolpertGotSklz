@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 # my eratosthenes algorithm
 
 def primecalc(limit):
@@ -10,4 +11,4 @@ def primecalc(limit):
         primes.append(i)
         for f in range(i*i,limit,i):  #this will find each successive multiple of i and set that position to false
             counter[f]=False
-print (primecalc(1000))
+print primecalc(1000)
