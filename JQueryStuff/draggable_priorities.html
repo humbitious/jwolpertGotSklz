@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Draggable - Default functionality</title>
+	<link rel="stylesheet" href="jquery-ui-1.8.20.custom.css">
+	<script src="jquery-1.7.2.min.js"></script>
+	<script src="jquery-ui-1.8.20.custom.min"></script>
+	<style>
+	div.leftcolumn { width: 50px; height: 700px; padding: 0.1em; text-align: center; vertical-align: left; background-image: url(images/ui-bg_highlight-soft_75_ffe45c_1x100) }
+	div.bottom { width: 1400px; height: 50px; padding: 0.1em; text-align: center; vertical-align: left; background-image: url(images/ui-bg_highlight-soft_75_ffe45c_1x100); float:bottom }
+	div { width: 120px; height: 50px; padding: 0.1em; vertical-align: text-middle; text-align: center; float: left}
+	</style>
+	<!-- Build an array of fivefifty and loop them into divs -->
+	<script>
+	$(function() {
+		
+		// Collision = {
+		// 	tolerance: "touch",
+		// 	drop : function (event, ui) {
+		// 		animateDiv();
+		// 		function makeNewPosition(){
+		// 			var h = $(window).height() - 5;
+		// 			var w = $(window).width() - 5;
+		// 		
+		// 			var nh = Math.floor(Math.random() * h);
+		// 	    	var nw = Math.floor(Math.random() * w);
+		// 	    	return [nh,nw];
+		// 		}
+		// 		function animateDiv(){
+		// 		    var newq = makeNewPosition();
+		// 		    $(this).animate({ top: newq[0], left: newq[1] }, function(){
+		// 		      animateDiv();        
+		// 		 	});			
+		// 		};
+		// 	}
+		// 	}
+			
+		
+		var fivefifty = ["Achievement","Affection","Appearance","Approval","Arts","Authority","Beauty","Career","Employment","Community","Creativity",
+		"Environment","Expertise","Fame","Family","Freedom","Generosity","EmotionalHealth","PhysicalHealth","Home","Honesty","Integrity","Learning",
+		"Leisure","Love","Loyalty","Meaning","Money","Openness","Patriotism","PersonalGrowth","Pleasure","Popularity","Power","Privacy","Recognition",
+		"Relationships","Religion","Reputation","Respect","RiskTaking","Security","SocialAccept","Socializing","Solitude","SpiritDev","Status","Winning","Wisdom"];
+
+		for (i=0; i<fivefifty.length; i++){
+			$('body').append('<div class="ui-widget-content"> <p>' + fivefifty[i] + '</p></div>')
+			// $('div').droppable(Collision);
+		}
+		
+		$('body').append('<div class="bottom"><p>Left side for building blocks...Right side for Goals</p></div>')
+		
+		$( "div" ).draggable(); 
+						
+	});	
+	</script>
+</head>
+<body>
+	<div class="leftcolumn"><p>Low to High Priority</p></div>
+</body>
+</html>

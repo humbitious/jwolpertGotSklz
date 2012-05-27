@@ -28,4 +28,3 @@ def nuggets(low,high,small,medium,large):
         print nuggetUltimate
 nuggets(0,60,6,9,20)    
 
-
